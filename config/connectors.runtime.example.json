@@ -1,0 +1,49 @@
+{
+  "note": "Examples only. Keep disabled until the designated sandbox and any paid processing are explicitly approved. No credentials belong in this file.",
+  "sharepoint": {
+    "enabled": false,
+    "tenantId": "REPLACE_WITH_SANDBOX_TENANT",
+    "clientId": "REPLACE_WITH_READ_ONLY_APP",
+    "driveId": "REPLACE_WITH_APPROVED_DRIVE",
+    "client": "REPLACE_WITH_CONFIDENTIALITY_SCOPE",
+    "credentialSecretName": "sharepoint-graph-client-secret"
+  },
+  "documentAI": {
+    "layoutEndpoint": "https://REPLACE.cognitiveservices.azure.com",
+    "layoutSecret": "document-layout-key",
+    "extractionEndpoint": "https://REPLACE.openai.azure.com",
+    "deployment": "REPLACE_WITH_APPROVED_STRUCTURED_OUTPUT_MODEL",
+    "extractionSecret": "document-extraction-key"
+  },
+  "salesforce": {
+    "enabled": false,
+    "instanceUrl": "https://REPLACE.sandbox.my.salesforce.com",
+    "clientId": "REPLACE_WITH_CONNECTED_APP",
+    "credentialSecretName": "salesforce-oauth",
+    "objects": [
+      {
+        "apiName": "REPLACE_WITH_APPROVED_OBJECT",
+        "kind": "sale",
+        "fields": {
+          "value": "REPLACE_PRICE_FIELD",
+          "client": "REPLACE_CLIENT_ACL_FIELD",
+          "propertySourceId": "REPLACE_PROPERTY_REFERENCE_FIELD",
+          "address": "REPLACE_ADDRESS_FIELD",
+          "status": "REPLACE_STAGE_FIELD",
+          "settlementDate": "REPLACE_SETTLEMENT_DATE_FIELD",
+          "contractDate": "REPLACE_CONTRACT_DATE_FIELD",
+          "effectiveAt": "REPLACE_EFFECTIVE_DATE_FIELD"
+        },
+        "statusMap": {"Closed Won": "indicative", "REPLACE_CONFIRMED_SETTLED_STAGE": "settled"},
+        "basis": "REPLACE_APPROVED_GST_AND_ALLOCATION_BASIS",
+        "unit": "AUD"
+      }
+    ]
+  },
+  "cirrus8": {
+    "enabled": false,
+    "feedUrl": "https://REPLACE_APPROVED_EXISTING_FEED/normalised-property-feed",
+    "connectionSecretName": "cirrus8-readonly",
+    "mappingReviewed": false
+  }
+}

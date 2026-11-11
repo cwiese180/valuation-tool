@@ -1,0 +1,79 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>BRWA | Property Intelligence</title>
+    <link rel="stylesheet" href="/style.css" />
+    <script src="/app.js" defer></script>
+  </head>
+  <body>
+    <div id="login" class="login" hidden>
+      <div class="login-card">
+        <div class="wordmark">BR<span>WA</span></div>
+        <p class="eyebrow">PROPERTY INTELLIGENCE</p>
+        <h1>Evidence behind<br />every decision.</h1>
+        <p>Sign in to your property intelligence workspace.</p>
+        <form id="login-form">
+          <label
+            >Local access code<input
+              name="code"
+              type="password"
+              autocomplete="current-password"
+              required /></label
+          ><button>Open synthetic workspace →</button>
+          <p class="muted">
+            Run <code>npm run demo</code> and use the access code printed in
+            your terminal.
+          </p>
+        </form>
+        <a id="entra-login" class="button" href="/auth/login" hidden
+          >Sign in with Microsoft →</a
+        >
+        <p id="login-error" role="alert"></p>
+      </div>
+    </div>
+    <div id="workspace" hidden>
+      <aside>
+        <div class="wordmark">BR<span>WA</span></div>
+        <p class="eyebrow">PROPERTY INTELLIGENCE</p>
+        <nav aria-label="Main navigation">
+          <button data-view="overview" class="active">
+            ◈ <span>Overview</span></button
+          ><button data-view="properties">▦ <span>Property 360°</span></button
+          ><button data-view="evidence">≡ <span>Evidence Explorer</span></button
+          ><button data-view="reviews">
+            ☑ <span>Review queue</span
+            ><small id="review-count"></small></button
+          ><button data-view="quotes">↗ <span>Valuation quoting</span></button
+          ><button data-view="admin">⚙ <span>Administration</span></button>
+        </nav>
+        <div class="sidebar-foot">
+          <span class="live-dot"></span>
+          <span id="mode">Synthetic workspace</span>
+          <p id="identity"></p>
+          <button id="logout" class="subtle">Sign out</button>
+        </div>
+      </aside>
+      <main>
+        <header>
+          <div>
+            <p class="eyebrow">BURGESS RAWSON WESTERN AUSTRALIA</p>
+            <p id="breadcrumb">Workspace / Overview</p>
+          </div>
+          <span class="badge" id="environment">SYNTHETIC DATA</span>
+        </header>
+        <div id="notice" role="status" hidden></div>
+        <section id="content"></section>
+        <footer>
+          Internal intelligence · Source systems remain authoritative · Fees are
+          indicative
+        </footer>
+      </main>
+    </div>
+    <dialog id="source-dialog">
+      <button id="close-source" class="subtle right">Close ×</button>
+      <div id="source-content"></div>
+    </dialog>
+  </body>
+</html>
