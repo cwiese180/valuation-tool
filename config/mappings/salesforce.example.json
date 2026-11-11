@@ -1,0 +1,37 @@
+{
+  "note": "Replace placeholder API names only after Salesforce schema discovery. No fields are assumed.",
+  "objects": {
+    "sale": {
+      "apiName": null,
+      "fields": {
+        "sourceId": null,
+        "propertyReference": null,
+        "price": null,
+        "contractDate": null,
+        "settlementDate": null,
+        "status": null,
+        "lastModified": null
+      }
+    },
+    "lease": {
+      "apiName": null,
+      "fields": {
+        "sourceId": null,
+        "propertyReference": null,
+        "commencement": null,
+        "expiry": null,
+        "faceRent": null,
+        "incentive": null,
+        "status": null,
+        "lastModified": null
+      }
+    }
+  },
+  "statusMap": {
+    "draft": "indicative",
+    "underOffer": "indicative",
+    "exchanged": "contracted",
+    "settled": "settled",
+    "executed": "executed"
+  }
+}
