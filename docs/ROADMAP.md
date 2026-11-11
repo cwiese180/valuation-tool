@@ -20,7 +20,7 @@ The runnable implementation and validation limits are recorded in [VALIDATION.md
 ## Remaining implementation and external acceptance
 
 - [x] Publish the development branch through the connected GitHub API
-- [ ] Establish passing GitHub CI, including browser cases
+- [x] Establish passing GitHub CI: 68 core/HTTP tests and six browser cases
 - [ ] Approved runtime/database target; implement and validate Azure SQL migration if IT retains that target
 - [ ] Entra sandbox end-to-end sign-in and access-policy validation
 - [ ] Source-schema discovery and actual Cirrus8 SQL/API/Fabric/export contract mapping
