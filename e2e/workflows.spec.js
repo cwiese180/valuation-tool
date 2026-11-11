@@ -29,8 +29,9 @@ test("Evidence Explorer filters verification and opens a source page", async ({
   await expect(page.locator("#evidence-results tbody tr")).toHaveCount(1);
   await page.getByLabel("Verification status").selectOption("pending");
   await page
+    .locator("#evidence-results tbody tr")
+    .filter({ hasText: "adopted_value" })
     .getByRole("button", { name: "Page 1", exact: true })
-    .first()
     .click();
   await expect(page.getByRole("dialog")).toBeVisible();
   await expect(page.getByText("Literal source quote")).toBeVisible();
@@ -39,7 +40,10 @@ test("Evidence Explorer filters verification and opens a source page", async ({
 test("review requires explicit source numeric confirmation before publishing", async ({
   page,
 }) => {
-  await page.getByRole("button", { name: "Review queue" }).click();
+  await page
+    .getByRole("navigation", { name: "Main navigation" })
+    .getByRole("button", { name: "Review queue" })
+    .click();
   const card = page
     .locator("#content > .card")
     .filter({ hasText: "adopted_value" });
