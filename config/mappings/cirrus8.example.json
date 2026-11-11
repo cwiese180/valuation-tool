@@ -1,0 +1,29 @@
+{
+  "note": "Map to BRWA's existing Cirrus8 integration fields after schema audit.",
+  "property": {
+    "sourceId": null,
+    "address": null,
+    "landAreaSqm": null,
+    "buildingAreaSqm": null
+  },
+  "tenancy": {
+    "sourceId": null,
+    "propertySourceId": null,
+    "areaSqm": null
+  },
+  "lease": {
+    "sourceId": null,
+    "tenancySourceId": null,
+    "startDate": null,
+    "endDate": null,
+    "optionDate": null
+  },
+  "rentHistory": {
+    "leaseSourceId": null,
+    "effectiveFrom": null,
+    "effectiveTo": null,
+    "amount": null,
+    "period": null,
+    "basis": null
+  }
+}
