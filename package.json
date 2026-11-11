@@ -1,0 +1,12 @@
+{
+  "name": "brwa-property-intelligence",
+  "version": "0.1.0",
+  "private": true,
+  "description": "Synthetic-data MVP and canonical data pipeline primitives",
+  "scripts": {
+    "test": "node --test"
+  },
+  "engines": {
+    "node": ">=20"
+  }
+}
