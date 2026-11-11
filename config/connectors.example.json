@@ -1,0 +1,30 @@
+{
+  "sharepoint": {
+    "enabled": false,
+    "tenantId": "",
+    "clientId": "",
+    "siteId": "",
+    "driveId": "",
+    "folderPath": "",
+    "credentialSecretName": "sharepoint-graph-client-secret"
+  },
+  "cirrus8": {
+    "enabled": false,
+    "adapter": "existing-feed",
+    "feedType": "sql-or-api-or-file",
+    "connectionSecretName": "cirrus8-readonly",
+    "mappingFile": "config/mappings/cirrus8.example.json"
+  },
+  "salesforce": {
+    "enabled": false,
+    "instanceUrl": "",
+    "clientId": "",
+    "credentialSecretName": "salesforce-oauth",
+    "objects": {
+      "property": "",
+      "salesTransaction": "",
+      "leasingTransaction": ""
+    },
+    "mappingFile": "config/mappings/salesforce.example.json"
+  }
+}
