@@ -1,12 +1,23 @@
 {
   "name": "brwa-property-intelligence",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "private": true,
-  "description": "Synthetic-data MVP and canonical data pipeline primitives",
+  "description": "Authenticated property intelligence workbench with replay-safe ingestion and synthetic integration fixtures",
   "scripts": {
-    "test": "node --test"
+    "start": "node src/server.js",
+    "demo": "node scripts/demo.js",
+    "test": "node --test test/*.test.js",
+    "check": "node --check src/server.js && node --check public/app.js",
+    "backup": "node scripts/backup.js",
+    "dev": "node scripts/demo.js",
+    "test:e2e": "playwright test",
+    "format": "prettier --write src public scripts test e2e playwright.config.js"
   },
   "engines": {
-    "node": ">=20"
+    "node": ">=24.0.0"
+  },
+  "devDependencies": {
+    "@playwright/test": "1.56.1",
+    "prettier": "3.6.2"
   }
 }

@@ -1,45 +1,39 @@
-# Delivery roadmap and acceptance criteria
+# Delivery roadmap and acceptance gates
 
-## Phase 0 — Foundation (completed initial scaffold)
-- [x] Repository README and architecture/data contract specification
-- [x] Synthetic interactive browser MVP: overview, Property 360, evidence search, review, quoting and integration catalogue
-- [ ] Automated browser testing and CI
+The runnable implementation and validation limits are recorded in [VALIDATION.md](VALIDATION.md). The original Azure-oriented specification remains in [ARCHITECTURE.md](ARCHITECTURE.md); [IMPLEMENTATION.md](IMPLEMENTATION.md) explains the executable Node/SQLite implementation and its limits.
 
-## Phase 1 — Secure backend and schema
-- [ ] Select hosting/runtime with internal IT; Entra ID security design
-- [ ] Azure SQL migrations and seed data; typed REST APIs
-- [ ] Audit events, permissions, logging, validation, backup/restore
-- [ ] Replace browser-only records with API-backed synthetic dataset
+## Implemented in the synthetic development release
 
-## Phase 2 — Data pilot
-- [ ] Read-only inventory of 100 representative valuation reports, with approval
-- [ ] Parse text/tables and extract subject valuation and comparable evidence
-- [ ] Implement source-page traceability and side-by-side verification
-- [ ] Test deterministic property matching, duplicate sales and multi-parcel cases
+- [x] Persistent backend, relational migrations, immutable raw source history and API-backed UI
+- [x] Property 360°, Evidence Explorer and source-page review/correction workflows
+- [x] Single-tenant Entra sign-in implementation, role enforcement, client scopes and encrypted credentials
+- [x] Graph delta, Salesforce QueryAll and normalised existing-feed Cirrus8 adapter implementations
+- [x] Mock pagination/deletion/replay/transport tests, effective-dated rent history
+- [x] Azure layout and schema-constrained extraction providers with expenditure guard
+- [x] Human property matching, recorded source mappings and reversible merges
+- [x] Indicative quotes, independent approval and branded printable proposals
+- [x] Administration, failure history, restart recovery, manual replay, audit chain and backup/restore tooling
+- [x] Core/service/HTTP automated tests executed
+- [x] Browser regression tests and CI workflow written
+- [x] Deployment runbook, security limitations and IT credential checklist
 
-## Phase 3 — Internal integrations
-- [ ] Audit existing Cirrus8 pipelines; reuse feeds and identifiers
-- [ ] Map Salesforce objects and statuses; incremental sync
+## Remaining implementation and external acceptance
+
+- [x] Publish the development branch through the connected GitHub API
+- [x] Establish passing GitHub CI: 68 core/HTTP tests and six browser cases
+- [ ] Approved runtime/database target; implement and validate Azure SQL migration if IT retains that target
+- [ ] Entra sandbox end-to-end sign-in and access-policy validation
+- [ ] Source-schema discovery and actual Cirrus8 SQL/API/Fabric/export contract mapping
+- [ ] Sandbox connectivity and end-to-end import tests for all three sources
+- [ ] SharePoint mixed-client/source ACL and revocation reconciliation, folder scope if required
+- [ ] Representative 100-report extraction benchmark at ≥99% critical numeric accuracy
+- [ ] Multi-property deal allocation mapping and multi-parcel acceptance cases
 - [ ] Reconcile 20 representative properties across systems
-- [ ] Add monitoring and replay for failed loads
+- [ ] Salesforce full reconciliation/CDC and Bulk API backfill plan for actual volume
+- [ ] Production-scale worker/scheduler, external audit sink, alerting, retention and key rotation
+- [ ] Historical fee/hour calibration and Valuations leadership sign-off
+- [ ] Independent IT security review and full volume/key recovery drill
+- [ ] Power BI, licensed external data and agency opportunity rules if retained in scope
+- [ ] Separately authorized production deployment
 
-## Phase 4 — Commercial features
-- [ ] Calibrate quoting from approved historical fees and hours
-- [ ] Branded quote generation and approval workflow
-- [ ] Licensed external data adapters and permission controls
-- [ ] Power BI dashboards and agency opportunity rules
-
-## Acceptance gates
-- No unapproved production access or deployments.
-- 100% source-page traceability for published document evidence.
-- >=99% critical numeric extraction accuracy on a reviewed representative test set, with errors escalated.
-- Zero false automatic property merges in acceptance cases.
-- Idempotent imports and reversible merges.
-- Server-side access control and verified tenant/client confidentiality boundaries.
-- Quote pricing is labelled indicative until signed off by Valuations leadership.
-
-## Immediate owner dependencies
-IT: Azure/SQL environment, existing Cirrus8 pipeline schema, Salesforce object definitions, shared-drive access plan.
-Valuations: representative reports, field definitions, approval policy.
-Sales & Leasing: stage semantics, completed deal data fields, ownership of verification.
-External: licence review before feed use.
+No production source access, paid AI processing or production deployment is authorized by this roadmap.
